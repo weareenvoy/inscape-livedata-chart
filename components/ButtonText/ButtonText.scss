@@ -1,0 +1,37 @@
+@import '../base';
+
+.ButtonText {
+  @extend .font-bold;
+  height: 35px;
+  border: none;
+  background: none;
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  cursor: pointer;
+
+  @include breakpoint($medium-up) {
+    display: inline-block;
+    padding: 0 10px;
+    min-width: 70px;
+    font-size: 11px;
+  }
+
+  @include breakpoint($large-up) {
+    margin: 0 6px;
+    padding: 0 20px;
+  }
+
+  &.active {
+    color: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

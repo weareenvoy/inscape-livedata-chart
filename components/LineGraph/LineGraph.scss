@@ -1,0 +1,149 @@
+@import '../base';
+
+.LineGraph {
+  display: block;
+  position: relative;
+  height: 480px;
+  margin-bottom: 40px;
+
+  .svg-container{
+    transition: all 0.25s ease;
+
+    &.fade{
+      opacity: 0.1;
+    }
+
+    &.active{
+      opacity: 1 !important;
+    }
+
+    path.visible-path{
+      &.fade{
+        opacity: 0.1;
+      }
+
+      &.active{
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  &__dot{
+    &.fade{
+      opacity: 0.1;
+    }
+
+    &.active{
+      opacity: 1 !important;
+    }
+  }
+  
+  &__graph-container{
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+
+    svg{
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+
+  &__graph{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__popup-container{
+    position: absolute;
+    padding: 0 20px 20px 20px;
+    transform: translate(-50%, -100%);
+    pointer-events: none;
+  }
+  
+  &__popup{
+    position: relative;
+    background: rgba(255,255,255,0.9);
+    padding: 10px 20px;
+    width: 200px;
+    text-align: center;
+    line-height: 1.05em;
+    z-index: 10;
+
+    &:after{
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 50%;
+      bottom: 0%;
+      border-style: solid;
+      border-width: 8px 10px 0 10px;
+      border-color: #ffffff transparent transparent transparent;
+      transform: translate(-50%, 100%);
+    }
+
+    .channel{
+      @extend .font-regular;
+      color: #9B9B9B;
+      font-size: 11px;
+      font-weight: normal;
+    }
+
+    .show-name{
+      @extend .font-bold;
+      color: black;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  &__graph-lines-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__graph-line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background: black;
+    opacity: 0.1;
+    flex: none;
+  }
+
+  &__graph-x-axis{
+    position: relative;
+    margin-top: 10px;
+    height: 20px;
+  }
+  
+  &__graph-x-axis-item{
+    @extend .font-body-regular;
+    position: absolute;
+
+    .time{
+      transform: translate(-50%, 0);
+      font-size: 9px;
+      color: #666666;
+    }
+    color: #666666;
+
+    &:last-child{
+      @extend .font-body-bold;
+      
+      .time{
+        color: black;
+      }
+    }
+
+  }
+}

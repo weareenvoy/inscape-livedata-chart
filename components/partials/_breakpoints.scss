@@ -1,0 +1,34 @@
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1200px;
+$screen-xl: 1500px;
+$screen-xxl: 1800px;
+
+// $x-small-up:  min-width $screen-xs + 1;
+// $small-up:    min-width $screen-sm + 1;
+// $medium-up:   min-width $screen-md + 1;
+// $large-up:    min-width $screen-lg + 1;
+// $x-large-up:  min-width $screen-xl + 1;
+// $xx-large-up: min-width $screen-xxl + 1;
+
+// $x-small-down:  max-width $screen-xs;
+// $small-down:    max-width $screen-sm;
+// $medium-down:   max-width $screen-md;
+// $large-down:    max-width $screen-lg;
+// $x-large-down:  max-width $screen-xl;
+// $xx-large-down: max-width $screen-xxl;
+
+$x-small-up:  min-width $screen-xs;
+$small-up:    min-width $screen-sm;
+$medium-up:   min-width $screen-md;
+$large-up:    min-width $screen-lg;
+$x-large-up:  min-width $screen-xl;
+$xx-large-up: min-width $screen-xxl;
+
+$x-small-down:  max-width $screen-xs - 1;
+$small-down:    max-width $screen-sm - 1;
+$medium-down:   max-width $screen-md - 1;
+$large-down:    max-width $screen-lg - 1;
+$x-large-down:  max-width $screen-xl - 1;
+$xx-large-down: max-width $screen-xxl - 1;

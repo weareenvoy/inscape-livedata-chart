@@ -1,0 +1,290 @@
+@import './base';
+
+
+.WidgetView {
+  position: relative;
+
+  &__top-wrapper{
+    padding: 0;
+
+    .background{
+      display: none;
+    }
+
+    &.fullscreen {
+      width:100%;
+      height:100%;
+
+      .WidgetView__graph-flex-container{
+        align-items: stretch;
+        height: 71vh;
+      }
+
+      .WidgetView__header-description{
+        display: none;
+      }
+
+      .WidgetView__disclaimer{
+        display: none;
+      }
+
+      h1.header-content--widget{
+        font-size: 35px;
+        top: 73px;
+      }
+
+      .ButtonText{
+        font-size: 16px;
+      }
+
+      .Legend{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 95%;
+      }
+
+      .LegendItem {
+        margin: 0;
+        padding: 10px 20px 10px 94px;
+      }
+
+      .LineGraph {
+        height: 100%;
+      }
+
+      .LegendItem__show {
+        font-size: 20px;
+      }
+
+      .LegendItem__channel{
+        font-size: 18px;
+      }
+
+      .LegendItem__index{
+        font-size: 20px;
+      }
+
+      .LineGraph__graph-x-axis{
+        //display: none;
+      }
+      .Dot{
+        top: 0px;
+        left: 8px;
+      }
+
+      path {
+        stroke-width: 2px;
+      }
+
+      circle.LineGraph__dot{
+        radius: 4px;
+        stroke-width: 4px;
+      }
+
+      // For smaller full screens
+      @media screen and (max-height: 1079px) {
+        .WidgetView__graph-flex-container{
+          height: 56vh;
+        }
+
+        .WidgetView__graph-container{
+          margin-bottom: 0;
+        }
+
+        .ButtonText{
+          font-size: 11px;
+        }
+
+        .LegendItem__show {
+          font-size: 11px;
+        }
+
+        .LegendItem__channel{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  &__top-box{
+    display: inline-block;
+    position: relative;
+
+    @include breakpoint($medium-up){
+      display: block;
+    }
+
+    hr{
+      border: none;
+      height: 4px;
+      background-color: rgba(0, 0, 0, 0.04);
+
+      margin: 30px 20px 30px 20px;
+
+      @include breakpoint($medium-up){
+        margin: 50px 40px 40px 40px;
+      }
+    }
+  }
+
+  &__header-extension {
+    padding: 0 20px;
+    
+    @include breakpoint($medium-up){
+      padding: 0 40px;
+    }
+    
+    h1 {
+      @extend .font-light;
+      
+      font-size: 28px;
+
+      @include breakpoint($medium-up){
+        // position: absolute;
+        // top: 83px;
+        // left: 240px;
+      }
+    }
+  }
+
+  &__header-description{
+    @extend .font-regular;
+    
+    font-size: 13px;
+    line-height: 1.4em;
+    color: #7C7C7C;
+
+    @include breakpoint($medium-up){
+      // position: absolute;
+      // left: 70px;
+      // top: 160px;
+      width: 490px;
+    }
+  }
+
+  &__fullscreen-btn-container{
+    display: none;
+
+    @include breakpoint($medium-up){
+      position: absolute;
+      display: block;
+      right: 40px;
+      top: auto;
+      cursor: pointer;
+    }
+  }
+
+  &__graph-flex-container {
+    padding: 0px 20px;
+    clear: both;
+
+    @include breakpoint($medium-up){
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 40px;
+    }
+  }
+
+  &__graph-container {
+    @include breakpoint($medium-up){
+      flex: 3;
+      margin-bottom: 100px;
+    }
+
+    z-index: 1;
+
+    .filters{
+      display: block;
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .left{
+      display: none;
+
+      @include breakpoint($medium-up){
+        // Not showing the toggle for now.
+        // display: block;
+        float: left;
+        margin-left: -6px;
+        margin-bottom: 0px;
+        text-align: center;
+      }
+    }
+
+    .right{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+
+      @include breakpoint($medium-up){
+        display: block;
+        float: right;
+        margin-right: -6px;
+      }
+    }
+  }
+
+  &__range-selector{
+    @extend .font-bold;
+    border: none;
+    background: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-left: 0px;
+    margin-bottom: 10px;
+
+    &:focus{
+      outline: none;
+    }
+
+    @include breakpoint($medium-up){
+      margin-bottom: 0;
+    }
+  }
+
+  &__legend-container {
+    @include breakpoint($medium-up){
+      flex: 1;
+      padding-left: 40px;
+    }
+  }
+
+  &__graph-timer-bar{
+    display: none;
+  }
+
+  &__graph-timer-progress{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+  }
+
+  &__disclaimer{
+    @extend .font-regular;
+    color: #7C7C7C;
+    font-size: 11px;
+    padding: 0px 0px 40px 20px;
+
+    @include breakpoint($medium-up){
+      font-size: 11px;
+      padding: 0px 40px 40px 40px;
+    }
+
+    a {
+      @extend .font-regular;
+      color: #7C7C7C;
+      font-size: 11px;
+
+      @include breakpoint($medium-up){
+        font-size: 11px;
+      }
+    }
+  }
+}

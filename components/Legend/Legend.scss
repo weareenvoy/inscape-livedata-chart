@@ -1,0 +1,22 @@
+@import '../base';
+
+.Legend {
+  display: block;
+  margin-top: 28px;
+  margin-bottom: 40px;
+
+  &__heading{
+    @include breakpoint($medium-up){
+      display: none;
+    }
+
+    .item{
+      @extend .font-bold;
+      color: rgba(0, 0, 0, 0.4);
+      font-size: 10px;
+      display: inline-block;
+      margin-right: 30px;
+      text-transform: uppercase;
+    }
+  }
+}

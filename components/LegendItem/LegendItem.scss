@@ -1,0 +1,74 @@
+@import '../base';
+
+.LegendItem {
+  display: block;
+  position: relative;
+  padding: 12px 20px 12px 58px;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+
+  @include breakpoint($medium-up){
+    padding: 12px 20px 12px 74px;
+
+    &:hover, &.selected{
+      background-color: white;
+    }
+  }
+
+  &__index{
+    @extend .font-bold;
+    display: inline-block;
+    font-size: 25px;
+    width: 24px;
+
+    @include breakpoint($medium-up){
+      font-size: 15px;
+    }
+  }
+
+  &__dot-container{
+    position: absolute;
+    left: 0px;
+    top: 8px;
+
+    @include breakpoint($medium-up){
+      left: 20px;
+    }
+
+    .Dot{
+      position: absolute;
+      left: 0;
+      width: 29px;
+      height: 3px;
+      top: 32px;
+
+      @include breakpoint($medium-up){
+        position: relative;
+        top: 1px;
+        width: 20px;
+        height: 10px;
+      }
+    }
+  }
+
+  &__channel{
+    @extend .font-regular;
+    font-size: 13px;
+    font-weight: normal;
+
+    @include breakpoint($medium-up){
+      font-size: 11px;
+    }
+  }
+
+  &__show{
+    @extend .font-bold;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: bold;
+
+    @include breakpoint($medium-up){
+      font-size: 11px;
+    }
+  }
+}
