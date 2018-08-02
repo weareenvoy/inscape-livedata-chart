@@ -40,7 +40,7 @@ class WidgetView extends Component {
     }
 
     componentDidMount () {
-        document.title = 'Inscape - Real-Time Viewing'
+        // document.title = 'Inscape - Real-Time Viewing'
 
         this.componentIsMounted = true
         // this.props.turnHeaderElementsForWidget()
